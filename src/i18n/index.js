@@ -16,7 +16,7 @@ i18n
             "about": "About Us"
           },
           "main": {
-            "title": "EMC Automation",
+            "title": "ECM Automation",
             "description": "Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever."
           }
         }
