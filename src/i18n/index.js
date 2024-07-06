@@ -31,7 +31,15 @@ i18n
             "contact.phone": "Phone",
             "contact.message": "Message",
             "contact.send": "Send",
-            "contactus": "Contact Us"
+            "contactus": "Contact Us",
+            "segmentsTitle": "Segments We Operate In",
+            "segmentWood": "Wood (MDF, Paper and Pulp)",
+            "segmentFood": "Food",
+            "segmentAgroindustry": "Agroindustry",
+            "servicesTitle": "Services Provided",
+            "serviceManufacturing": "Manufacturing of measuring, testing, and control equipment.",
+            "serviceRepairComputers": "Repair of computers and peripheral equipment.",
+            "serviceMaintenance": "Maintenance and repair of measuring, testing, and control equipment.",
           }
         }
       },
@@ -45,7 +53,7 @@ i18n
             "about": "Quem Somos"
           },
           "main": {
-            "hometitle": "EMC Automação",
+            "hometitle": "ECM Automação",
             "homedescription": "Há mais de 30 anos, a ECM Automação se dedica à automação industrial em Ponta Grossa, Paraná, oferecendo soluções inovadoras para diversos setores. Expandimos nossa presença por todo o Brasil e países do Mercosul, como Bolívia e Peru.",
             "aboutdescription": "Há mais de 30 anos, a ECM Automação tem sido líder em automação industrial, com sede em Ponta Grossa, Paraná. Especializamo-nos em oferecer soluções inovadoras para uma ampla gama de setores industriais. Com uma história consolidada, acumulamos uma vasta experiência em diferentes áreas da automação, expandindo nossa atuação por todo o território brasileiro e estendendo nossa presença para países do Mercosul, como Bolívia e Peru.",
             "compromissetitle": "Nosso Compromisso",
@@ -59,7 +67,15 @@ i18n
             "contact.phone": "Telefone",
             "contact.message": "Mensagem",
             "contact.send": "Enviar",
-            "contactus": "Contate-nos"
+            "contactus": "Contate-nos",
+            "segmentsTitle": "Segmentos que Atuamos",
+            "segmentWood": "Madeira (MDF, Papel e Celulose)",
+            "segmentFood": "Alimentos",
+            "segmentAgroindustry": "Agroindústria",
+            "servicesTitle": "Serviços Prestados",
+            "serviceManufacturing": "Fabricação de aparelhos e equipamentos de medida, teste e controle.",
+            "serviceRepairComputers": "Reparação de computadores e de equipamentos periféricos.",
+            "serviceMaintenance": "Manutenção e reparação de aparelhos e instrumentos de medida, teste e controle.",
           }
         }
       }
