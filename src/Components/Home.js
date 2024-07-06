@@ -8,7 +8,6 @@ const Home = ({ darkMode }) => {
     { id: 1, title: t('activities.activity1.title'), description: t('activities.activity1.description') },
     { id: 2, title: t('activities.activity2.title'), description: t('activities.activity2.description') },
     { id: 3, title: t('activities.activity3.title'), description: t('activities.activity3.description') },
-    // Adicione mais atividades conforme necessário
   ];
 
   return (
