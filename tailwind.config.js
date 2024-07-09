@@ -4,7 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        'ease-in-out': 'ease-in-out',
+      },
+      transitionDuration: {
+        '500': '500ms',
+      },
+    },
   },
   plugins: [
     function({ addUtilities }) {

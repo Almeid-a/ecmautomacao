@@ -1,8 +1,12 @@
 import React from 'react';
+import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
+import imageslider1 from '../img/industria.png';
+import imageslider2 from '../img/industria2.jpeg';
+import imageslider3 from '../img/industria3.jpg';
 
 const Home = ({ darkMode }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const segments = [
     { icon: '🌲', text: t('main.segmentWood') },
@@ -16,10 +20,22 @@ const Home = ({ darkMode }) => {
     { text: t('main.serviceMaintenance') }
   ];
 
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000
+  };
+
+  const images = [imageslider1, imageslider2, imageslider3];
+
   return (
-    <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} flex flex-col items-center transition-all duration-500 ease-in min-h-screen`}>
+    <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>
       <main className="flex flex-col md:flex-row items-center justify-center px-8 w-full mt-24">
-        <div className={`flex-1 text-center md:mr-8`}>
+        <div className="flex-1 text-center md:mr-8">
           <h1 className="text-5xl font-bold mb-4">{t('main.hometitle')}</h1>
           <p className="mb-6">{t('main.homedescription')}</p>
           <div className="flex justify-center">
@@ -29,10 +45,17 @@ const Home = ({ darkMode }) => {
           </div>
         </div>
         <div className="flex-1 mt-10 md:mt-7 flex justify-center">
-          <img src="https://via.placeholder.com/300" alt="Phone" className="w-full h-auto max-w-md"/>
+          <Slider {...sliderSettings} className="w-[800px]">
+            {images.map((src, index) => (
+              <div key={index}>
+                <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[500px] object-cover rounded-lg shadow-md"/>
+              </div>
+            ))}
+          </Slider>
         </div>
       </main>
-      <section className="w-full mt-20 mb-20 px-8 flex flex-col items-center">
+
+      <section className="w-full mt-10 mb-20 px-8 flex flex-col items-center">
         <div className="mt-8 px-4 w-full max-w-5xl">
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.segmentsTitle')}</h2>
           <div className="flex flex-wrap justify-center">
@@ -44,7 +67,7 @@ const Home = ({ darkMode }) => {
             ))}
           </div>
         </div>
-        
+
         <div className="mt-8 px-4 w-full max-w-5xl">
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.servicesTitle')}</h2>
           <div className="flex flex-wrap justify-center">
