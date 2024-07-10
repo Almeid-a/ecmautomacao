@@ -27,7 +27,8 @@ const Home = ({ darkMode }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 3000,
+    arrows: false
   };
 
   const images = [imageslider1, imageslider2, imageslider3];
@@ -37,7 +38,7 @@ const Home = ({ darkMode }) => {
       <main className="flex flex-col md:flex-row items-center justify-center px-8 w-full mt-24">
         <div className="flex-1 text-center md:mr-8">
           <h1 className="text-5xl font-bold mb-4">{t('main.hometitle')}</h1>
-          <p className="mb-6">{t('main.homedescription')}</p>
+          <p className="mb-6 text-xl">{t('main.homedescription')}</p>
           <div className="flex justify-center">
             <button className={`px-6 py-3 rounded ${darkMode ? 'bg-teal-600 text-white' : 'bg-teal-500 text-white'} mt-4`}>
               {t('main.contactus')}
@@ -48,7 +49,7 @@ const Home = ({ darkMode }) => {
           <Slider {...sliderSettings} className="w-[800px]">
             {images.map((src, index) => (
               <div key={index}>
-                <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[500px] object-cover rounded-lg shadow-md"/>
+                <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[450px] object-cover rounded-lg shadow-md"/>
               </div>
             ))}
           </Slider>
