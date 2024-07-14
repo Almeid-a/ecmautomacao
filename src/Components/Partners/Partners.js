@@ -30,20 +30,33 @@ const Partners = ({ darkMode }) => {
   };
 
   return (
-    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-max flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
-      <div className="text-center w-full mt-72 mb-96">
-        <div className="relative w-full max-w-5xl mx-auto">
-          <Slider {...sliderSettings}>
+    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
+      <div className="text-center w-full mt-5 mb-24 px-4">
+        <div className="relative w-full max-w-3xl mx-auto">
+          <div className="block md:hidden">
             {partners.map((partner) => (
-              <div key={partner.id} className="text-center">
+              <div key={partner.id} className="mb-8 bg-white shadow-md rounded-lg p-4 text-black mx-4">
                 <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block">
-                  <img src={partner.logo} alt={partner.name} className="mx-auto mb-8 h-36 md:h-48" />
-                  <h3 className="text-xl md:text-2xl font-bold">{partner.name}</h3>
-                  <p className="mt-2">{partner.description}</p>
+                  <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-16" />
+                  <h3 className="text-base font-bold">{partner.name}</h3>
+                  <p className="mt-2 text-sm">{partner.description}</p>
                 </a>
               </div>
             ))}
-          </Slider>
+          </div>
+          <div className="hidden md:block">
+            <Slider {...sliderSettings}>
+              {partners.map((partner) => (
+                <div key={partner.id} className="text-center">
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block">
+                    <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-24 md:h-36" />
+                    <h3 className="text-lg md:text-xl font-bold">{partner.name}</h3>
+                    <p className="mt-2 text-base md:text-lg">{partner.description}</p>
+                  </a>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

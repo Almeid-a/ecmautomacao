@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 import imageslider1 from '../img/industria.png';
@@ -35,21 +36,23 @@ const Home = ({ darkMode }) => {
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>
-      <main className="flex flex-col md:flex-row items-center justify-center px-8 w-full mt-24">
+      <main className="flex flex-col xl:flex-row items-center justify-center px-8 w-full mt-5">
         <div className="flex-1 text-center md:mr-8">
           <h1 className="text-5xl font-bold mb-4">{t('main.hometitle')}</h1>
           <p className="mb-6 text-xl">{t('main.homedescription')}</p>
           <div className="flex justify-center">
-            <button className={`px-6 py-3 rounded ${darkMode ? 'bg-teal-600 text-white' : 'bg-teal-500 text-white'} mt-4`}>
-              {t('main.contactus')}
-            </button>
+            <Link to="/contact">
+              <button className={`px-6 py-3 rounded ${darkMode ? 'bg-teal-600 text-white' : 'bg-teal-500 text-white'} mt-4`}>
+                {t('main.contactus')}
+              </button>
+            </Link>
           </div>
         </div>
-        <div className="flex-1 mt-10 md:mt-7 flex justify-center">
-          <Slider {...sliderSettings} className="w-[800px]">
+        <div className="flex-1 mt-10 md:mt-7 flex md:justify-center">
+          <Slider {...sliderSettings} className="w-[350px] sm:w-[600px] md:w-[700px] lg:w-[800px]">
             {images.map((src, index) => (
               <div key={index}>
-                <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[450px] object-cover rounded-lg shadow-md"/>
+                <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[350px] md:h-[450px] object-cover rounded-lg shadow-md"/>
               </div>
             ))}
           </Slider>
