@@ -68,7 +68,7 @@ const Contact = ({ darkMode }) => {
 
     try {
       const response = await emailjs.send(
-        'service_4kjmdom',
+        'service_xx96w7v',
         'template_aokg7dw',
         formData,
         'MVARxd9rxtBSLFxUF'

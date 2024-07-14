@@ -34,7 +34,7 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
 
   return (
     <>
-      <header className={`w-full py-2 md:py-4 px-4 md:px-8 flex justify-between ${darkMode ? 'bg-gradient-to-r from-gray-800 to-black' : 'bg-gradient-to-r from-gray-100 to-teal-100'} transition-colors duration-300`}>
+      <header className={`w-full py-2 md:py-4 px-4 md:px-8 flex justify-between items-center ${darkMode ? 'bg-gradient-to-r from-gray-800 to-black' : 'bg-gradient-to-r from-gray-100 to-teal-100'} transition-colors duration-300`}>
         <div className="text-2xl font-bold">
           <Link to="/" className={`text-${darkMode ? 'gray-200' : 'gray-900'} hover:text-teal-500`}>
             {t('header.logo')}
@@ -47,15 +47,17 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
         </div>
         <nav
           ref={menuRef}
-          className={`fixed top-0 right-0 h-auto w-64 max-h-screen ${
+          className={`fixed lg:static top-0 right-0 h-auto w-64 max-h-screen ${
             darkMode ? 'bg-gray-900 text-gray-200' : 'bg-gray-100 text-gray-900'
-          } shadow-lg transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} z-20 rounded-bl-lg pb-8 lg:pb-0 lg:static lg:flex lg:items-center lg:bg-transparent`}>
+          } shadow-lg transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 z-20 rounded-bl-lg pb-8 lg:pb-0 lg:flex lg:items-center lg:bg-transparent lg:shadow-none lg:w-auto lg:h-auto lg:relative lg:top-0 lg:right-0`}>
           <ul className={`flex flex-col items-center lg:flex-row lg:space-x-8 space-y-4 lg:space-y-0 mt-4 lg:mt-0`}>
-            <li className="self-end lg:hidden absolute top-4 right-4">
-              <button className="text-2xl focus:outline-none" onClick={handleMenuToggle}>
-                <FaTimes />
-              </button>
-            </li>
+            {isMenuOpen && (
+              <li className="self-end lg:hidden absolute top-4 right-4">
+                <button className="text-2xl focus:outline-none" onClick={handleMenuToggle}>
+                  <FaTimes />
+                </button>
+              </li>
+            )}
             <li>
               <Link to="/" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.home')}
@@ -104,7 +106,7 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
           </ul>
         </nav>
       </header>
-      {isMenuOpen && <div className="fixed inset-0 bg-black opacity-50 z-10" onClick={handleMenuToggle}></div>}
+      {isMenuOpen && <div className="fixed inset-0 bg-black opacity-50 z-10 lg:hidden" onClick={handleMenuToggle}></div>}
     </>
   );
 };
