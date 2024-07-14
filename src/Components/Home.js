@@ -38,7 +38,7 @@ const Home = ({ darkMode }) => {
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>
       <main className="flex flex-col xl:flex-row items-center justify-center px-8 w-full mt-5">
         <div className="flex-1 text-center md:mr-8">
-          <h1 className="text-5xl font-bold mb-4">{t('main.hometitle')}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('main.hometitle')}</h1>
           <p className="mb-6 text-xl">{t('main.homedescription')}</p>
           <div className="flex justify-center">
             <Link to="/contact">
@@ -64,7 +64,7 @@ const Home = ({ darkMode }) => {
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.segmentsTitle')}</h2>
           <div className="flex flex-wrap justify-center">
             {segments.map((segment, index) => (
-              <div key={index} className="m-4 p-4 border rounded text-center w-60">
+              <div key={index} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60`}>
                 <div className="text-5xl mb-2">{segment.icon}</div>
                 <div>{segment.text}</div>
               </div>
@@ -76,7 +76,7 @@ const Home = ({ darkMode }) => {
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.servicesTitle')}</h2>
           <div className="flex flex-wrap justify-center">
             {services.map((service, index) => (
-              <div key={index} className="m-4 p-4 border rounded text-center w-60">
+              <div key={index} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60`}>
                 <div>{service.text}</div>
               </div>
             ))}

@@ -8,7 +8,7 @@ const About = ({ darkMode }) => {
 
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} flex flex-col items-center justify-center min-h-screen`}>
-      <div className="text-center mt-5 px-4 w-full max-w-7xl mb-14 md:mt-24 ">
+      <div className="text-center mt-5 px-4 w-full max-w-7xl mb-14 md:mt-5 ">
         <h1 className="text-3xl md:text-5xl font-bold mb-9">{t('about.abouttitle')}</h1>
         <p className="text-lg md:text-xl mb-14">{t('about.aboutdescription')}</p>
         

@@ -31,7 +31,7 @@ const Partners = ({ darkMode }) => {
 
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
-      <div className="text-center w-full mt-5 mb-24 px-4">
+      <div className="text-center w-full px-4">
         <div className="relative w-full max-w-3xl mx-auto">
           <div className="block md:hidden">
             {partners.map((partner) => (
