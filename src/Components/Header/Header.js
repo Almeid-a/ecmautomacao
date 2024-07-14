@@ -47,17 +47,15 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
         </div>
         <nav
           ref={menuRef}
-          className={`absolute top-0 right-0 h-auto w-64 lg:w-auto ${
+          className={`fixed top-0 right-0 h-auto w-64 max-h-screen ${
             darkMode ? 'bg-gray-900 text-gray-200' : 'bg-gray-100 text-gray-900'
-          } shadow-lg lg:shadow-none transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 z-20 rounded-bl-lg pb-8 lg:pb-0 lg:static lg:flex lg:items-center lg:bg-transparent`}>
+          } shadow-lg transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} z-20 rounded-bl-lg pb-8 lg:pb-0 lg:static lg:flex lg:items-center lg:bg-transparent`}>
           <ul className={`flex flex-col items-center lg:flex-row lg:space-x-8 space-y-4 lg:space-y-0 mt-4 lg:mt-0`}>
-            {isMenuOpen && (
-              <li className="self-end lg:hidden absolute top-4 right-4">
-                <button className="text-2xl focus:outline-none" onClick={handleMenuToggle}>
-                  <FaTimes />
-                </button>
-              </li>
-            )}
+            <li className="self-end lg:hidden absolute top-4 right-4">
+              <button className="text-2xl focus:outline-none" onClick={handleMenuToggle}>
+                <FaTimes />
+              </button>
+            </li>
             <li>
               <Link to="/" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.home')}
@@ -90,12 +88,12 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
               </button>
             </li>
             <li className="mt-4 lg:mt-0">
-              <Switch 
-                onChange={toggleDarkMode} 
-                checked={darkMode} 
-                offColor="#ddd" 
-                onColor="#333" 
-                checkedIcon={<div className="flex justify-center items-center h-full"><FaSun className="text-yellow-500" size={20} /></div>} 
+              <Switch
+                onChange={toggleDarkMode}
+                checked={darkMode}
+                offColor="#ddd"
+                onColor="#333"
+                checkedIcon={<div className="flex justify-center items-center h-full"><FaSun className="text-yellow-500" size={20} /></div>}
                 uncheckedIcon={<div className="flex justify-center items-center h-full"><FaMoon className="text-blue-500" size={20} /></div>}
                 handleDiameter={28}
                 height={40}
