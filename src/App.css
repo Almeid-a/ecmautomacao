@@ -12,3 +12,8 @@
 #dark {
     background-color: #46045e;
 }
+
+.no-scroll {
+    overflow: hidden;
+  }
+  

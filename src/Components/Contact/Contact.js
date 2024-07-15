@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
@@ -21,6 +21,29 @@ const Contact = ({ darkMode }) => {
     phone: false,
     message: false,
   });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)'); // Tamanho de tela 'md' em Tailwind CSS
+
+    const handleMediaQueryChange = (e) => {
+      if (e.matches) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
+    };
+
+    if (mediaQuery.matches) {
+      document.body.classList.add('no-scroll');
+    }
+
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,8 +115,8 @@ const Contact = ({ darkMode }) => {
   const googleMapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.4959593157327!2d-50.1524864490183!3d-25.08696264411426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ef58869d6fcd91%3A0x1c03b7247e6c1e75!2sR.%20Alfazema%2C%20114%20-%20Contorno%2C%20Ponta%20Grossa%20-%20PR%2C%2084060-040%2C%20Brazil!5e0!3m2!1sen!2sus!4v1683210842651!5m2!1sen!2sus`;
 
   return (
-    <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-900': 'from-gray-100 to-teal-100 text-gray-800'} flex justify-center p-8 transition-all duration-500 ease-in`}>
-      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-900': 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex justify-center p-8 transition-all duration-500 ease-in overflow-hidden`}>
+      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg md:mb-20">
         <div className="md:w-1/3 p-8">
           <h2 className="text-3xl font-bold mb-4">{t('contact.formtitle')}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -193,7 +216,7 @@ const Contact = ({ darkMode }) => {
           </div>
           <iframe
             width="100%"
-            height="300"
+            height="500"
             frameBorder="0"
             style={{ border: 0 }}
             src={googleMapSrc}

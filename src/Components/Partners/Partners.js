@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { NextArrow, PrevArrow } from './Arrow/Arrow';
@@ -10,6 +10,29 @@ import SiemensLogo from '../../img/SiemensLogo.png';
 const Partners = ({ darkMode }) => {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)'); // Tamanho de tela 'md' em Tailwind CSS
+
+    const handleMediaQueryChange = (e) => {
+      if (e.matches) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
+    };
+
+    if (mediaQuery.matches) {
+      document.body.classList.add('no-scroll');
+    }
+
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
+
   const partners = [
     { id: 1, name: "Lenze", logo: LenzeLogo, url: "https://www.lenze.com/en-br", description: t('partners.lenzeDescription') },
     { id: 2, name: "Wago", logo: WagoLogo, url: "https://www.wago.com/br/", description: t('partners.wagoDescription') },
@@ -19,7 +42,6 @@ const Partners = ({ darkMode }) => {
 
   const sliderSettings = {
     dots: false,
-    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -30,8 +52,8 @@ const Partners = ({ darkMode }) => {
   };
 
   return (
-    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-dvh-screen flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
-      <div className="text-center w-full px-4 mt-5">
+    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in md:overflow-hidden`}>
+      <div className="text-center w-full px-4 mb-20">
         <div className="relative w-full max-w-3xl mx-auto">
           <div className="block md:hidden">
             {partners.map((partner) => (
@@ -64,3 +86,4 @@ const Partners = ({ darkMode }) => {
 };
 
 export default Partners;
+
