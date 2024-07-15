@@ -4,6 +4,7 @@ import { FaSun, FaMoon, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { FlagIcon } from 'react-flag-kit';
 import { Link } from 'react-router-dom';
+import logo from '../../img/EcmLogo.png'; 
 
 const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
   const { t } = useTranslation();
@@ -37,7 +38,7 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
       <header className={`w-full py-2 md:py-4 px-4 md:px-8 flex justify-between items-center ${darkMode ? 'bg-gradient-to-r from-gray-800 to-black' : 'bg-gradient-to-r from-gray-100 to-teal-100'} transition-colors duration-300`}>
         <div className="text-2xl font-bold">
           <Link to="/" className={`text-${darkMode ? 'gray-200' : 'gray-900'} hover:text-teal-500`}>
-            {t('header.logo')}
+            <img src={logo} alt="Logo" className="h-10" /> {/* Aqui substituímos o texto pelo logo */}
           </Link>
         </div>
         <div className="lg:hidden">

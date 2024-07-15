@@ -4,6 +4,8 @@ import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const Contact = ({ darkMode }) => {
   const { t } = useTranslation();
@@ -23,7 +25,7 @@ const Contact = ({ darkMode }) => {
   });
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)'); // Tamanho de tela 'md' em Tailwind CSS
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
 
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
@@ -47,6 +49,15 @@ const Contact = ({ darkMode }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'name') {
+      // Permitir apenas letras e espaços
+      const regex = /^[a-zA-Z\s]*$/;
+      if (!regex.test(value)) {
+        return;
+      }
+    }
+
     setFormData({
       ...formData,
       [name]: value,
@@ -54,6 +65,17 @@ const Contact = ({ darkMode }) => {
     setFormErrors({
       ...formErrors,
       [name]: false,
+    });
+  };
+
+  const handlePhoneChange = (value) => {
+    setFormData({
+      ...formData,
+      phone: value,
+    });
+    setFormErrors({
+      ...formErrors,
+      phone: false,
     });
   };
 
@@ -145,15 +167,24 @@ const Contact = ({ darkMode }) => {
               />
             </div>
             <div className={`mb-4 ${formErrors.phone ? 'border-red-500' : ''}`}>
-              <input
-                name="phone"
+              <PhoneInput
+                country={'br'}
                 value={formData.phone}
-                onChange={handleChange}
-                className={`w-full p-2 border rounded ${
+                onChange={handlePhoneChange}
+                inputStyle={{
+                  width: '100%',
+                  paddingLeft: '45px', // Adiciona padding para afastar os números do canto esquerdo
+                }}
+                containerStyle={{ border: formErrors.phone ? '1px solid red' : '1px solid #ced4da', borderRadius: '4px' }}
+                inputClass={`w-full p-2 border rounded ${
                   formErrors.phone ? 'border-red-500' : ''
                 }`}
-                type="text"
-                placeholder={t('contact.phone')}
+                buttonStyle={{
+                  borderTopLeftRadius: '4px',
+                  borderBottomLeftRadius: '4px',
+                  borderTopRightRadius: '0px',
+                  borderBottomRightRadius: '0px',
+                }}
               />
             </div>
             <div className={`mb-6 ${formErrors.message ? 'border-red-500' : ''}`}>
