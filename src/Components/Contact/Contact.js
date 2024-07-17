@@ -116,7 +116,7 @@ const Contact = ({ darkMode }) => {
         'service_rpvhw8z',
         'template_bixlcy7',
         formData,
-        '-JGiN-XwpxTIK7mcY'
+        '-JGiN-XwpxTlK7mcY'
 
         //'service_xx96w7v',
         //'template_aokg7dw',
