@@ -114,11 +114,12 @@ const Contact = ({ darkMode }) => {
     try {
       const response = await emailjs.send(
         'service_rpvhw8z',
-        //'service_xx96w7v',
         'template_bixlcy7',
-        //'template_aokg7dw',
         formData,
-        '-JGiN-XwpxTIK7mcY',
+        '-JGiN-XwpxTIK7mcY'
+
+        //'service_xx96w7v',
+        //'template_aokg7dw',
         //'MVARxd9rxtBSLFxUF'
       );
       setFormData({
