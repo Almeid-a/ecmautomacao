@@ -11,14 +11,14 @@ const About = ({ darkMode }) => {
     const mediaQuery = window.matchMedia('(min-width: 768px)');
 
     const handleMediaQueryChange = (e) => {
-      if (e.matches) {
+      if (!e.matches) {
         document.body.classList.add('no-scroll');
       } else {
         document.body.classList.remove('no-scroll');
       }
     };
 
-    if (mediaQuery.matches) {
+    if (!mediaQuery.matches) {
       document.body.classList.add('no-scroll');
     }
 
