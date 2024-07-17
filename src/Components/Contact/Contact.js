@@ -113,10 +113,13 @@ const Contact = ({ darkMode }) => {
 
     try {
       const response = await emailjs.send(
-        'service_xx96w7v',
-        'template_aokg7dw',
+        'service_rpvhw8z',
+        //'service_xx96w7v',
+        'template_bixlcy7',
+        //'template_aokg7dw',
         formData,
-        'MVARxd9rxtBSLFxUF'
+        '-JGiN-XwpxTIK7mcY',
+        //'MVARxd9rxtBSLFxUF'
       );
       setFormData({
         name: '',
@@ -173,7 +176,7 @@ const Contact = ({ darkMode }) => {
                 onChange={handlePhoneChange}
                 inputStyle={{
                   width: '100%',
-                  paddingLeft: '45px', // Adiciona padding para afastar os números do canto esquerdo
+                  paddingLeft: '45px',
                 }}
                 containerStyle={{ border: formErrors.phone ? '1px solid red' : '1px solid #ced4da', borderRadius: '4px' }}
                 inputClass={`w-full p-2 border rounded ${
