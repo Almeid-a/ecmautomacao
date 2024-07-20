@@ -6,6 +6,7 @@ import LenzeLogo from '../../img/LenzeLogo.png';
 import WagoLogo from '../../img/WagoLogo.png';
 import RockwellLogo from '../../img/RockwellLogo.png';
 import SiemensLogo from '../../img/SiemensLogo.png';
+import UniversalRobotsLogo from '../../img/UniversalRobotsLogo.png'
 
 const Partners = ({ darkMode }) => {
   const { t } = useTranslation();
@@ -38,6 +39,7 @@ const Partners = ({ darkMode }) => {
     { id: 2, name: "Wago", logo: WagoLogo, url: "https://www.wago.com/br/", description: t('partners.wagoDescription') },
     { id: 3, name: "Rockwell Automation", logo: RockwellLogo, url: "https://www.rockwellautomation.com/en-us.html", description: t('partners.rockwellDescription') },
     { id: 4, name: "Siemens", logo: SiemensLogo, url: "https://www.siemens.com/br/pt.html", description: t('partners.siemensDescription') },
+    { id: 5, name: "Universal Robots", logo: UniversalRobotsLogo, url: "https://www.universal-robots.com", description: t('partners.universalDescription')}
   ];
 
   const sliderSettings = {

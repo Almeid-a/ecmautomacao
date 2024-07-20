@@ -70,8 +70,18 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
               </Link>
             </li>
             <li>
+              <Link to="/clients" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+                {t('header.clients')}
+              </Link>
+            </li>
+            <li>
               <Link to="/partners" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.partners')}
+              </Link>
+            </li>
+            <li>
+              <Link to="/gallery" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+                {t('header.gallery')}
               </Link>
             </li>
             <li>

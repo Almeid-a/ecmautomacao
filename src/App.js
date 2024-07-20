@@ -6,6 +6,8 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home';
 import About from './Components/About/About';
 import Partners from './Components/Partners/Partners';
+import Clients from './Components/Clients/Client'
+import Gallery from './Components/Gallery/Gallery';
 import Contact from './Components/Contact/Contact';
 import { useTranslation } from 'react-i18next';
 
@@ -29,6 +31,8 @@ const App = () => {
           <Route path="/" element={<Home darkMode={darkMode} toggleDarkMode={toggleDarkMode} changeLanguage={changeLanguage} />} />
           <Route path="/about" element={<About darkMode={darkMode} />} />
           <Route path="/partners" element={<Partners darkMode={darkMode} />} />
+          <Route path="/clients" element={<Clients darkMode={darkMode} />} />
+          <Route path="/gallery" element={<Gallery darkMode={darkMode} />} />
           <Route path="/contact" element={<Contact darkMode={darkMode} />} />
         </Routes>
       </div>

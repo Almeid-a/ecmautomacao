@@ -114,12 +114,11 @@ const Contact = ({ darkMode }) => {
     try {
       const response = await emailjs.send(
         'service_rpvhw8z',
+        //'service_xx96w7v',
         'template_bixlcy7',
+        //'template_aokg7dw',
         formData,
         '-JGiN-XwpxTlK7mcY'
-
-        //'service_xx96w7v',
-        //'template_aokg7dw',
         //'MVARxd9rxtBSLFxUF'
       );
       setFormData({
@@ -173,6 +172,7 @@ const Contact = ({ darkMode }) => {
             <div className={`mb-4 ${formErrors.phone ? 'border-red-500' : ''}`}>
               <PhoneInput
                 country={'br'}
+                onlyCountries={['br']}
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 inputStyle={{

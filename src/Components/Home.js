@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion'; // Importar framer-motion
-import imageslider1 from '../img/industria.png';
-import imageslider2 from '../img/industria2.jpeg';
+import imageslider1 from '../img/industria.jpg';
+import imageslider2 from '../img/industria2.jpg';
 import imageslider3 from '../img/industria3.jpg';
 
 const Home = ({ darkMode }) => {
