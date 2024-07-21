@@ -60,6 +60,8 @@ const resources = {
         formPhone: "Phone",
         formMessage: "Message",
         formSend: "Send",
+        contactus: "Contact Us",
+        localizationtitle: "Our Location",
       },
       gallery: {
         title: "Services Provided",
@@ -143,6 +145,8 @@ const resources = {
         formPhone: "Telefone",
         formMessage: "Mensagem",
         formSend: "Enviar",
+        contactus: "Contate-nos",
+        localizationtitle: "Nossa Localização",
       },
       gallery: {
         title: "Serviços Realizados",
@@ -226,6 +230,8 @@ const resources = {
         formPhone: "Teléfono",
         formMessage: "Mensaje",
         formSend: "Enviar",
+        contactus: "Contáctenos",
+        localizationtitle: "Nuestra Ubicación",
       },
       gallery: {
         title: "Servicios Prestados",

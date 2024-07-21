@@ -141,9 +141,9 @@ const Contact = ({ darkMode }) => {
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-900': 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex justify-center p-8 transition-all duration-500 ease-in overflow-hidden`}>
-      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg md:mb-20">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg xl:mb-20">
         <div className="md:w-1/3 p-8">
-          <h2 className="text-3xl font-bold mb-4">{t('contact.formtitle')}</h2>
+          <h2 className="text-2xl xl:text-3xl font-bold mb-4">{t('contact.contacttitle')}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className={`mb-4 ${formErrors.name ? 'border-red-500' : ''}`}>
               <input
@@ -154,7 +154,7 @@ const Contact = ({ darkMode }) => {
                   formErrors.name ? 'border-red-500' : ''
                 }`}
                 type="text"
-                placeholder={t('contact.name')}
+                placeholder={t('contact.formName')}
               />
             </div>
             <div className={`mb-4 ${formErrors.email ? 'border-red-500' : ''}`}>
@@ -166,7 +166,7 @@ const Contact = ({ darkMode }) => {
                   formErrors.email ? 'border-red-500' : ''
                 }`}
                 type="email"
-                placeholder={t('contact.email')}
+                placeholder={t('contact.formEmail')}
               />
             </div>
             <div className={`mb-4 ${formErrors.phone ? 'border-red-500' : ''}`}>
@@ -200,7 +200,7 @@ const Contact = ({ darkMode }) => {
                   formErrors.message ? 'border-red-500' : ''
                 }`}
                 rows="4"
-                placeholder={t('contact.message')}
+                placeholder={t('contact.formMessage')}
               />
             </div>
             <div className="flex justify-end">
@@ -210,7 +210,7 @@ const Contact = ({ darkMode }) => {
                   darkMode ? 'bg-teal-600 text-white' : 'bg-teal-500 text-white'
                 } font-bold py-2 px-4 rounded hover:bg-teal-700`}
               >
-                {t('contact.send')}
+                {t('contact.formSend')}
               </button>
             </div>
           </form>

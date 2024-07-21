@@ -11,14 +11,14 @@ const About = ({ darkMode }) => {
     const mediaQuery = window.matchMedia('(min-width: 768px)');
 
     const handleMediaQueryChange = (e) => {
-      if (!e.matches) {
+      if (e.matches) {
         document.body.classList.add('no-scroll');
       } else {
         document.body.classList.remove('no-scroll');
       }
     };
 
-    if (!mediaQuery.matches) {
+    if (mediaQuery.matches) {
       document.body.classList.add('no-scroll');
     }
 
@@ -36,13 +36,13 @@ const About = ({ darkMode }) => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mt-5 px-4 w-full max-w-7xl mb-14 md:mt-5"
+        className="text-center mt-5 px-4 w-full max-w-7xl mb-5 xl:mb-14 md:mt-5"
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-9">{t('about.abouttitle')}</h1>
         <p className="text-lg md:text-xl">{t('about.aboutdescription')}</p>
       </motion.div>
 
-      <div className="text-center mt-5 px-4 w-full max-w-7xl mb-14 md:mt-5">
+      <div className="text-center mt-5 px-4 w-full max-w-7xl mb-5 xl:mb-14 md:mt-5">
         <div className="flex flex-col md:flex-row items-center mb-14">
           <motion.img
             initial={{ opacity: 0, x: -50 }}
@@ -63,7 +63,7 @@ const About = ({ darkMode }) => {
           </motion.div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center mb-14">
+        <div className="flex flex-col md:flex-row items-center mb-5 xl:mb-14">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

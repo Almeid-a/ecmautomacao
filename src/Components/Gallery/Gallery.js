@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 
@@ -25,29 +25,6 @@ import { NextArrow, PrevArrow } from './Arrow/Arrow';
 
 const PhotoGallerySlider = ({ darkMode }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (mediaQuery.matches) {
-      document.body.classList.add('no-scroll');
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
 
   const photos = [
     { src: ShowRoom1, alt: t('gallery.image1Description') },
@@ -77,7 +54,6 @@ const PhotoGallerySlider = ({ darkMode }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true,
     nextArrow: <NextArrow darkMode={darkMode} />,
     prevArrow: <PrevArrow darkMode={darkMode} />,
     responsive: [
@@ -89,7 +65,7 @@ const PhotoGallerySlider = ({ darkMode }) => {
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -99,19 +75,19 @@ const PhotoGallerySlider = ({ darkMode }) => {
   };
 
   return (
-    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} pt-4 flex flex-col items-center justify-start transition-all duration-500 ease-in`}>
-      <div className="mt-3 md:max-w-7xl text-center w-full px-4 mb-10 md:mt-12">
-        <h1 className="text-3xl md:text-5xl font-bold mb-2">{t('gallery.title')}</h1>
-        <p className="text-xl md:mb-10 max-w-7xl mt-8 md:mt-10">
+    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
+      <div className="max-w-7xl text-center w-full px-4 mt-2">
+        <h1 className="text-4xl xl:text-5xl font-bold mb-8">{t('gallery.title')}</h1>
+        <p className="text-lg md:text-xl mb-10 px-3 md:max-w-7xl mt-5">
           {t('gallery.description')}
         </p>
       </div>
-      <div className="w-full max-w-7xl mx-auto mb-12 md:mb-40">
-        <Slider {...settings}>
+      <div className="w-full max-w-7xl mx-auto px-8 md:px-4 mb-28">
+        <Slider {...settings} className={darkMode ? 'slick-dots-dark' : ''}>
           {photos.map((photo, index) => (
-            <div key={index} className="p-4 mb-5">
+            <div key={index} className="md:p-4 mb-10">
               <div className="bg-white shadow-md rounded-lg p-4 text-black mb-4">
-                <div className="relative w-full h-72 mb-4">
+                <div className="relative w-full h-64 mb-4">
                   <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <h2 className="text-xl font-bold mb-2 text-center">{photo.alt}</h2>
