@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 
@@ -25,6 +25,29 @@ import { NextArrow, PrevArrow } from './Arrow/Arrow';
 
 const PhotoGallerySlider = ({ darkMode }) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1280px)'); // Tamanho de tela 'md' em Tailwind CSS
+
+    const handleMediaQueryChange = (e) => {
+      if (e.matches) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
+    };
+
+    if (mediaQuery.matches) {
+      document.body.classList.add('no-scroll');
+    }
+
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
 
   const photos = [
     { src: ShowRoom1, alt: t('gallery.image1Description') },
@@ -82,7 +105,7 @@ const PhotoGallerySlider = ({ darkMode }) => {
           {t('gallery.description')}
         </p>
       </div>
-      <div className="w-full max-w-7xl mx-auto px-8 md:px-4 mb-28">
+      <div className="w-full max-w-6xl mx-auto px-8 md:px-12 xl:px-4 mb-28">
         <Slider {...settings} className={darkMode ? 'slick-dots-dark' : ''}>
           {photos.map((photo, index) => (
             <div key={index} className="md:p-4 mb-10">

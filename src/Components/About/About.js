@@ -8,7 +8,7 @@ const About = ({ darkMode }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
 
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
