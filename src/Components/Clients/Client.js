@@ -7,7 +7,7 @@ import AdamiLogoDark from '../../img/Clients/AdamiLogoDark.png';
 import TresIrmaosLogo from '../../img/Clients/TresIrmaosLogo.png';
 import ColacrilLogo from '../../img/Clients/ColacrilLogo.png';
 import ColacrilLogoDark from '../../img/Clients/ColacrilLogoDark.png';
-//import MendesLogo from '../../img/MendesLogo.png';
+// import MendesLogo from '../../img/MendesLogo.png';
 import BoPackingLogo from '../../img/Clients/BoPackingLogo.png';
 import BoPackingLogoDark from '../../img/Clients/BoPackingLogoDark.png';
 import AresPeruLogoDark from '../../img/Clients/AresLogo.png';
@@ -19,7 +19,7 @@ const Clients = ({ darkMode }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const mediaQuery = window.matchMedia('(min-width: 768px)'); // Tamanho de tela 'md' em Tailwind CSS
 
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
@@ -42,13 +42,13 @@ const Clients = ({ darkMode }) => {
   }, []);
 
   const clients = [
-    { id: 1, name: "Adami S/A", logo: darkMode? AdamiLogoDark : AdamiLogo , url: "https://www.adami.com.br", description: t('clients.adamiDescription') },
+    { id: 1, name: "Adami S/A", logo: darkMode ? AdamiLogoDark : AdamiLogo, url: "https://www.adami.com.br", description: t('clients.adamiDescription') },
     { id: 2, name: "Tres Irmãos", logo: TresIrmaosLogo, url: "https://www.tresirmaos.com.br", description: t('clients.tresIrmaosDescription') },
-    { id: 3, name: "Colacril", logo: darkMode? ColacrilLogoDark : ColacrilLogo, url: "https://www.colacril.com.br", description: t('clients.colacrilDescription') },
-    //{ id: 4, name: "Mendes", logo: MendesLogo, url: "https://www.mendes.com.br", description: t('clients.mendesDescription') },
-    { id: 5, name: "Bo Packing", logo: darkMode ? BoPackingLogoDark: BoPackingLogo, url: "https://www.bopacking.com", description: t('clients.boPackingDescription') },
+    { id: 3, name: "Colacril", logo: darkMode ? ColacrilLogoDark : ColacrilLogo, url: "https://www.colacril.com.br", description: t('clients.colacrilDescription') },
+    // { id: 4, name: "Mendes", logo: MendesLogo, url: "https://www.mendes.com.br", description: t('clients.mendesDescription') },
+    { id: 5, name: "Bo Packing", logo: darkMode ? BoPackingLogoDark : BoPackingLogo, url: "https://www.bopacking.com", description: t('clients.boPackingDescription') },
     { id: 6, name: "Ares Perú", logo: darkMode ? AresPeruLogoDark : AresPeruLogo, url: "https://www.aresperu.com", description: t('clients.aresPeruDescription') },
-    { id: 7, name: "Sudati", logo: darkMode? SudatiLogoDark : SudatiLogo, url: "https://www.sudati.com.br", description: t('clients.sudatiDescription') }
+    { id: 7, name: "Sudati", logo: darkMode ? SudatiLogoDark : SudatiLogo, url: "https://www.sudati.com.br", description: t('clients.sudatiDescription') }
   ];
 
   const sliderSettings = {
@@ -68,7 +68,7 @@ const Clients = ({ darkMode }) => {
         <div className="relative w-full max-w-3xl lg:max-w-5xl mx-auto">
           <div className="block md:hidden">
             {clients.map((client) => (
-              <div key={client.id} className="mb-8 bg-white shadow-md rounded-lg p-4 text-black mx-4">
+              <div key={client.id} className={`mb-8 p-4 border ${darkMode ? 'border-gray-400 text-gray-200' : 'border-teal-500 text-black'} rounded-lg mx-4`}>
                 <a href={client.url} target="_blank" rel="noopener noreferrer" className="block">
                   <img src={client.logo} alt={client.name} className="mx-auto mb-4 h-16" />
                   <p className="mt-2 text-sm">{client.description}</p>
@@ -80,8 +80,9 @@ const Clients = ({ darkMode }) => {
             <Slider {...sliderSettings}>
               {clients.map((client) => (
                 <div key={client.id} className="text-center">
-                  <a href={client.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={client.url} target="_blank" rel="noopener noreferrer" className="block p-4 rounded-lg">
                     <img src={client.logo} alt={client.name} className="mx-auto mb-4 h-24 md:h-36" />
+                    <h3 className="text-lg md:text-xl font-bold">{client.name}</h3>
                     <p className="mt-2 text-base md:text-lg">{client.description}</p>
                   </a>
                 </div>

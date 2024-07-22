@@ -6,8 +6,8 @@ import LenzeLogo from '../../img/Partners/LenzeLogo.png';
 import WagoLogo from '../../img/Partners/WagoLogo.png';
 import RockwellLogo from '../../img/Partners/RockwellLogo.png';
 import SiemensLogo from '../../img/Partners/SiemensLogo.png';
-import UniversalRobotsLogo from '../../img/Partners/UniversalRobotsLogo.png'
-import UniversalRobotsLogoDark from '../../img/Partners/UniversalRobotsLogoDark.png'
+import UniversalRobotsLogo from '../../img/Partners/UniversalRobotsLogo.png';
+import UniversalRobotsLogoDark from '../../img/Partners/UniversalRobotsLogoDark.png';
 
 const Partners = ({ darkMode }) => {
   const { t } = useTranslation();
@@ -40,7 +40,7 @@ const Partners = ({ darkMode }) => {
     { id: 2, logo: WagoLogo, url: "https://www.wago.com/br/", description: t('partners.wagoDescription') },
     { id: 3, logo: RockwellLogo, url: "https://www.rockwellautomation.com/en-us.html", description: t('partners.rockwellDescription') },
     { id: 4, logo: SiemensLogo, url: "https://www.siemens.com/br/pt.html", description: t('partners.siemensDescription') },
-    { id: 5, logo: darkMode? UniversalRobotsLogoDark : UniversalRobotsLogo, url: "https://www.universal-robots.com", description: t('partners.universalDescription')}
+    { id: 5, logo: darkMode ? UniversalRobotsLogoDark : UniversalRobotsLogo, url: "https://www.universal-robots.com", description: t('partners.universalDescription')}
   ];
 
   const sliderSettings = {
@@ -60,7 +60,7 @@ const Partners = ({ darkMode }) => {
         <div className="relative w-full max-w-3xl lg:max-w-5xl mx-auto">
           <div className="block md:hidden">
             {partners.map((partner) => (
-              <div key={partner.id} className="mb-8 bg-white shadow-md rounded-lg p-4 text-black mx-4">
+              <div key={partner.id} className={`mb-8 p-4 border ${darkMode ? 'border-gray-400 text-gray-200' : 'border-teal-500 text-black'} rounded-lg mx-4`}>
                 <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block">
                   <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-16" />
                   <p className="mt-2 text-sm">{partner.description}</p>
@@ -72,7 +72,7 @@ const Partners = ({ darkMode }) => {
             <Slider {...sliderSettings}>
               {partners.map((partner) => (
                 <div key={partner.id} className="text-center">
-                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block p-4 ${darkMode ? 'border-gray-400 md:border-none' : 'border-teal-500 md:border-none'} rounded-lg">
                     <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-24 md:h-36" />
                     <h3 className="text-lg md:text-xl font-bold">{partner.name}</h3>
                     <p className="mt-2 text-base md:text-lg">{partner.description}</p>
@@ -88,4 +88,3 @@ const Partners = ({ darkMode }) => {
 };
 
 export default Partners;
-
