@@ -5,6 +5,7 @@ import { NextArrow, PrevArrow } from './Arrow/Arrow';
 import AdamiLogo from '../../img/Clients/AdamiLogo.png';
 import AdamiLogoDark from '../../img/Clients/AdamiLogoDark.png';
 import TresIrmaosLogo from '../../img/Clients/TresIrmaosLogo.png';
+import TresIrmaosLogoDark from '../../img/Clients/TresIrmaosLogoDark.png';
 import ColacrilLogo from '../../img/Clients/ColacrilLogo.png';
 import ColacrilLogoDark from '../../img/Clients/ColacrilLogoDark.png';
 // import MendesLogo from '../../img/MendesLogo.png';
@@ -43,7 +44,7 @@ const Clients = ({ darkMode }) => {
 
   const clients = [
     { id: 1, name: "Adami S/A", logo: darkMode ? AdamiLogoDark : AdamiLogo, url: "https://www.adami.com.br", description: t('clients.adamiDescription') },
-    { id: 2, name: "Tres Irmãos", logo: TresIrmaosLogo, url: "https://www.tresirmaos.com.br", description: t('clients.tresIrmaosDescription') },
+    { id: 2, name: "Tres Irmãos", logo: darkMode ? TresIrmaosLogoDark : TresIrmaosLogo, url: "https://www.tresirmaos.com.br", description: t('clients.tresIrmaosDescription') },
     { id: 3, name: "Colacril", logo: darkMode ? ColacrilLogoDark : ColacrilLogo, url: "https://www.colacril.com.br", description: t('clients.colacrilDescription') },
     // { id: 4, name: "Mendes", logo: MendesLogo, url: "https://www.mendes.com.br", description: t('clients.mendesDescription') },
     { id: 5, name: "Bo Packing", logo: darkMode ? BoPackingLogoDark : BoPackingLogo, url: "https://www.bopacking.com", description: t('clients.boPackingDescription') },
@@ -71,7 +72,7 @@ const Clients = ({ darkMode }) => {
               <div key={client.id} className={`mb-8 p-4 border ${darkMode ? 'border-gray-400 text-gray-200' : 'border-teal-500 text-black'} rounded-lg mx-4`}>
                 <a href={client.url} target="_blank" rel="noopener noreferrer" className="block">
                   <img src={client.logo} alt={client.name} className="mx-auto mb-4 h-16" />
-                  <p className="mt-2 text-sm">{client.description}</p>
+                  <p className="mt-5 text-sm">{client.description}</p>
                 </a>
               </div>
             ))}
@@ -82,8 +83,7 @@ const Clients = ({ darkMode }) => {
                 <div key={client.id} className="text-center">
                   <a href={client.url} target="_blank" rel="noopener noreferrer" className="block p-4 rounded-lg">
                     <img src={client.logo} alt={client.name} className="mx-auto mb-4 h-24 md:h-36" />
-                    <h3 className="text-lg md:text-xl font-bold">{client.name}</h3>
-                    <p className="mt-2 text-base md:text-lg">{client.description}</p>
+                    <p className="mt-10 text-lg md:text-xl">{client.description}</p>
                   </a>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +6,26 @@ import { motion } from 'framer-motion';
 import imageslider1 from '../img/industria.jpg';
 import imageslider2 from '../img/industria2.jpg';
 import imageslider3 from '../img/industria3.jpg';
+import ShowRoom1 from '../img/ShowRoom/ShowRoom1.webp';
+import ShowRoom2 from '../img/ShowRoom/ShowRoom2.webp';
+import ShowRoom3 from '../img/ShowRoom/ShowRoom3.webp';
+import ShowRoom4 from '../img/ShowRoom/ShowRoom4.webp';
+import ShowRoom5 from '../img/ShowRoom/ShowRoom5.webp';
+import ShowRoom6 from '../img/ShowRoom/ShowRoom6.webp';
+import ShowRoom7 from '../img/ShowRoom/ShowRoom7.webp';
+import ShowRoom8 from '../img/ShowRoom/ShowRoom8.webp';
+import ShowRoom9 from '../img/ShowRoom/ShowRoom9.webp';
+import ShowRoom10 from '../img/ShowRoom/ShowRoom10.webp';
+import ShowRoom11 from '../img/ShowRoom/ShowRoom11.webp';
+import ShowRoom12 from '../img/ShowRoom/ShowRoom12.webp';
+import ShowRoom13 from '../img/ShowRoom/ShowRoom13.webp';
+import ShowRoom14 from '../img/ShowRoom/ShowRoom14.webp';
+import ShowRoom15 from '../img/ShowRoom/ShowRoom15.webp';
+import ShowRoom16 from '../img/ShowRoom/ShowRoom16.webp';
+import ShowRoom17 from '../img/ShowRoom/ShowRoom17.webp';
+import ShowRoom18 from '../img/ShowRoom/ShowRoom18.webp';
+import ShowRoom19 from '../img/ShowRoom/ShowRoom19.webp';
+import { preloadImages } from '../utils/preloadImages';
 
 const Home = ({ darkMode }) => {
   const { t } = useTranslation();
@@ -34,6 +54,11 @@ const Home = ({ darkMode }) => {
   };
 
   const images = [imageslider1, imageslider2, imageslider3];
+  const galleryImages = [ShowRoom1, ShowRoom2, ShowRoom3, ShowRoom4, ShowRoom5, ShowRoom6, ShowRoom7, ShowRoom8, ShowRoom9, ShowRoom10, ShowRoom11, ShowRoom12, ShowRoom13, ShowRoom14, ShowRoom15, ShowRoom16, ShowRoom17, ShowRoom18, ShowRoom19];
+
+  useEffect(() => {
+    preloadImages(galleryImages);
+  }, []);
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>

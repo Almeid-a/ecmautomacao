@@ -13,7 +13,7 @@ const Partners = ({ darkMode }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)'); // Tamanho de tela 'md' em Tailwind CSS
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
 
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
@@ -36,11 +36,11 @@ const Partners = ({ darkMode }) => {
   }, []);
 
   const partners = [
-    { id: 1, logo: LenzeLogo, url: "https://www.lenze.com/en-br", description: t('partners.lenzeDescription') },
-    { id: 2, logo: WagoLogo, url: "https://www.wago.com/br/", description: t('partners.wagoDescription') },
-    { id: 3, logo: RockwellLogo, url: "https://www.rockwellautomation.com/en-us.html", description: t('partners.rockwellDescription') },
-    { id: 4, logo: SiemensLogo, url: "https://www.siemens.com/br/pt.html", description: t('partners.siemensDescription') },
-    { id: 5, logo: darkMode ? UniversalRobotsLogoDark : UniversalRobotsLogo, url: "https://www.universal-robots.com", description: t('partners.universalDescription')}
+    { id: 1, name: 'Lenze', logo: LenzeLogo, url: "https://www.lenze.com/en-br", description: t('partners.lenzeDescription') },
+    { id: 2, name: 'Wago', logo: WagoLogo, url: "https://www.wago.com/br/", description: t('partners.wagoDescription') },
+    { id: 3, name: 'Rockwell Automation', logo: RockwellLogo, url: "https://www.rockwellautomation.com/en-us.html", description: t('partners.rockwellDescription') },
+    { id: 4, name: 'Siemens', logo: SiemensLogo, url: "https://www.siemens.com/br/pt.html", description: t('partners.siemensDescription') },
+    { id: 5, name: 'Universal Robots', logo: darkMode ? UniversalRobotsLogoDark : UniversalRobotsLogo, url: "https://www.universal-robots.com", description: t('partners.universalDescription')}
   ];
 
   const sliderSettings = {
@@ -63,7 +63,7 @@ const Partners = ({ darkMode }) => {
               <div key={partner.id} className={`mb-8 p-4 border ${darkMode ? 'border-gray-400 text-gray-200' : 'border-teal-500 text-black'} rounded-lg mx-4`}>
                 <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block">
                   <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-16" />
-                  <p className="mt-2 text-sm">{partner.description}</p>
+                  <p className="mt-5 text-sm">{partner.description}</p>
                 </a>
               </div>
             ))}
@@ -72,10 +72,9 @@ const Partners = ({ darkMode }) => {
             <Slider {...sliderSettings}>
               {partners.map((partner) => (
                 <div key={partner.id} className="text-center">
-                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="block p-4 ${darkMode ? 'border-gray-400 md:border-none' : 'border-teal-500 md:border-none'} rounded-lg">
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className={`block p-4 ${darkMode ? 'border-gray-400 md:border-none' : 'border-teal-500 md:border-none'} rounded-lg`}>
                     <img src={partner.logo} alt={partner.name} className="mx-auto mb-4 h-24 md:h-36" />
-                    <h3 className="text-lg md:text-xl font-bold">{partner.name}</h3>
-                    <p className="mt-2 text-base md:text-lg">{partner.description}</p>
+                    <p className="mt-10 text-lg md:text-xl">{partner.description}</p>
                   </a>
                 </div>
               ))}
