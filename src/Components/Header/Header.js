@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { FlagIcon } from 'react-flag-kit';
 import { Link } from 'react-router-dom';
 import logo from '../../img/EcmLogo.png'; 
+import logoDark from '../../img/EcmLogoDark.png';
 
 const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
   const { t } = useTranslation();
@@ -30,15 +31,15 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
 
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
-    setIsMenuOpen(false); // Fechar o menu após selecionar o idioma
+    setIsMenuOpen(false);
   };
 
   return (
     <>
-      <header className={`w-full py-2 md:py-4 px-4 md:px-8 flex justify-between items-center ${darkMode ? 'bg-gradient-to-r from-gray-800 to-black' : 'bg-gradient-to-r from-gray-100 to-teal-100'} transition-colors duration-300`}>
+      <header className={`w-full py-4 px-4 md:px-6 flex justify-between items-center ${darkMode ? 'bg-gradient-to-r from-gray-800 to-black' : 'bg-gradient-to-r from-gray-100 to-teal-100'} transition-colors duration-300`}>
         <div className="text-2xl font-bold">
           <Link to="/" className={`text-${darkMode ? 'gray-200' : 'gray-900'} hover:text-teal-500`}>
-            <img src={logo} alt="Logo" className="h-10" /> {/* Aqui substituímos o texto pelo logo */}
+            <img src={darkMode ? logo : logoDark} alt="Logo" className="h-15 w-16 md:h-20 md:w-24 mx-auto" />
           </Link>
         </div>
         <div className="lg:hidden">

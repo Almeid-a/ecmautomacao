@@ -101,7 +101,7 @@ const PhotoGallerySlider = ({ darkMode }) => {
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in`}>
       <div className="max-w-7xl text-center w-full md:px-2 mt-2 xl:mb-10">
-        <h1 className="text-4xl xl:text-5xl font-bold xl:mb-8">{t('gallery.title')}</h1>
+        <h1 className="text-4xl xl:text-5xl font-bold xl:mb-6">{t('gallery.title')}</h1>
         <p className="text-lg md:text-xl mb-10 md:mb-5 px-3 md:max-w-7xl mt-5">
           {t('gallery.description')}
         </p>

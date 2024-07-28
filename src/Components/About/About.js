@@ -36,7 +36,7 @@ const About = ({ darkMode }) => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mt-5 px-4 w-full max-w-7xl mb-5 xl:mb-14 md:mt-5"
+        className="text-center mt-5 px-4 w-full max-w-7xl mb-5 xl:mb-14"
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-9">{t('about.abouttitle')}</h1>
         <p className="text-lg md:text-xl">{t('about.aboutdescription')}</p>

@@ -62,7 +62,7 @@ const Home = ({ darkMode }) => {
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>
-      <main className="flex flex-col xl:flex-row items-center justify-center px-8 w-full mt-5">
+      <main className="flex flex-col xl:flex-row items-center justify-center px-8 w-full mt-2">
         <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="flex-1 text-center md:mr-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-5">{t('main.hometitle')}</h1>
           <p className="mb-5 text-xl">{t('main.homedescription')}</p>

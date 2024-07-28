@@ -113,13 +113,10 @@ const Contact = ({ darkMode }) => {
 
     try {
       const response = await emailjs.send(
-        'service_rpvhw8z',
-        //'service_xx96w7v',
-        'template_bixlcy7',
-        //'template_aokg7dw',
+        'service_xx96w7v',
+        'template_aokg7dw',
         formData,
-        '-JGiN-XwpxTlK7mcY'
-        //'MVARxd9rxtBSLFxUF'
+        'MVARxd9rxtBSLFxUF'
       );
       setFormData({
         name: '',
@@ -141,7 +138,7 @@ const Contact = ({ darkMode }) => {
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-900': 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex justify-center p-8 transition-all duration-500 ease-in overflow-hidden`}>
-      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg xl:mb-20">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl bg-white shadow-lg rounded-lg xl:mb-40">
         <div className="md:w-1/3 p-8">
           <h2 className="text-2xl xl:text-3xl font-bold mb-4">{t('contact.contacttitle')}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -172,7 +169,7 @@ const Contact = ({ darkMode }) => {
             <div className={`mb-4 ${formErrors.phone ? 'border-red-500' : ''}`}>
               <PhoneInput
                 country={'br'}
-                onlyCountries={['br']}
+                defaultCountry={'br'}
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 inputStyle={{
@@ -233,12 +230,8 @@ const Contact = ({ darkMode }) => {
                 darkMode ? 'text-teal-600' : 'text-teal-500'
               }`}
             />
-            <span>{t('contact.contactus')}</span>
-            <p className="mt-2 text-gray-600">
-              +55 (42) 9 9998-0311
-              <br />
-              +55 (42) 9 9976-2511
-            </p>
+            <span>{t('contact.phonetitle')}</span>
+            <p className="mt-2 text-gray-600">+55 42 3223-2022</p>
           </div>
           <div className="mb-4">
             <FaEnvelope
@@ -246,17 +239,18 @@ const Contact = ({ darkMode }) => {
                 darkMode ? 'text-teal-600' : 'text-teal-500'
               }`}
             />
-            <span>Email</span>
-            <p className="mt-2 text-gray-600">ecrema@elautomacao.com.br</p>
+            <span>{t('contact.emailtitle')}</span>
+            <p className="mt-2 text-gray-600">contato@ecmautomacao.com.br</p>
           </div>
           <iframe
-            width="100%"
-            height="500"
-            frameBorder="0"
-            style={{ border: 0 }}
-            src={googleMapSrc}
-            allowFullScreen
             title="Google Maps"
+            src={googleMapSrc}
+            width="100%"
+            height="400"
+            className="rounded-lg"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

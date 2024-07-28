@@ -8,7 +8,8 @@ import TresIrmaosLogo from '../../img/Clients/TresIrmaosLogo.png';
 import TresIrmaosLogoDark from '../../img/Clients/TresIrmaosLogoDark.png';
 import ColacrilLogo from '../../img/Clients/ColacrilLogo.png';
 import ColacrilLogoDark from '../../img/Clients/ColacrilLogoDark.png';
-// import MendesLogo from '../../img/MendesLogo.png';
+import MendesMaquinasLogo from '../../img/Clients/MendesMaquinasLogo.png'
+import MendesMaquinasLogoDark from '../../img/Clients/MendesMaquinasLogoDark.png'
 import BoPackingLogo from '../../img/Clients/BoPackingLogo.png';
 import BoPackingLogoDark from '../../img/Clients/BoPackingLogoDark.png';
 import AresPeruLogoDark from '../../img/Clients/AresLogo.png';
@@ -43,13 +44,13 @@ const Clients = ({ darkMode }) => {
   }, []);
 
   const clients = [
-    { id: 1, name: "Adami S/A", logo: darkMode ? AdamiLogoDark : AdamiLogo, url: "https://www.adami.com.br", description: t('clients.adamiDescription') },
-    { id: 2, name: "Tres Irmãos", logo: darkMode ? TresIrmaosLogoDark : TresIrmaosLogo, url: "https://www.tresirmaos.com.br", description: t('clients.tresIrmaosDescription') },
+    { id: 1, name: "Adami S/A", logo: darkMode ? AdamiLogoDark : AdamiLogo, url: "https://adami.com.br", description: t('clients.adamiDescription') },
+    { id: 2, name: "Tres Irmãos", logo: darkMode ? TresIrmaosLogoDark : TresIrmaosLogo, url: "https://tresirmaos.net", description: t('clients.tresIrmaosDescription') },
     { id: 3, name: "Colacril", logo: darkMode ? ColacrilLogoDark : ColacrilLogo, url: "https://www.colacril.com.br", description: t('clients.colacrilDescription') },
-    // { id: 4, name: "Mendes", logo: MendesLogo, url: "https://www.mendes.com.br", description: t('clients.mendesDescription') },
-    { id: 5, name: "Bo Packing", logo: darkMode ? BoPackingLogoDark : BoPackingLogo, url: "https://www.bopacking.com", description: t('clients.boPackingDescription') },
-    { id: 6, name: "Ares Perú", logo: darkMode ? AresPeruLogoDark : AresPeruLogo, url: "https://www.aresperu.com", description: t('clients.aresPeruDescription') },
-    { id: 7, name: "Sudati", logo: darkMode ? SudatiLogoDark : SudatiLogo, url: "https://www.sudati.com.br", description: t('clients.sudatiDescription') }
+    { id: 4, name: "Mendes", logo: darkMode? MendesMaquinasLogoDark : MendesMaquinasLogo, url: "https://mendesmaquinas.com.br", description: t('clients.mendesDescription') },
+    { id: 5, name: "Bo Packing", logo: darkMode ? BoPackingLogoDark : BoPackingLogo, url: "https://bopackaging.com.br/en/", description: t('clients.boPackingDescription') },
+    { id: 6, name: "Ares Perú", logo: darkMode ? AresPeruLogoDark : AresPeruLogo, url: "https://aresperu.com.pe", description: t('clients.aresPeruDescription') },
+    { id: 7, name: "Sudati", logo: darkMode ? SudatiLogoDark : SudatiLogo, url: "https://www.sudatimdf.com.br", description: t('clients.sudatiDescription') }
   ];
 
   const sliderSettings = {
