@@ -61,32 +61,32 @@ const Header = ({ darkMode, toggleDarkMode, changeLanguage }) => {
               </li>
             )}
             <li>
-              <Link to="/" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.home')}
               </Link>
             </li>
             <li>
-              <Link to="/about" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/about" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.about')}
               </Link>
             </li>
             <li>
-              <Link to="/clients" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/clients" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.clients')}
               </Link>
             </li>
             <li>
-              <Link to="/partners" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/partners" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.partners')}
               </Link>
             </li>
             <li>
-              <Link to="/gallery" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/gallery" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.gallery')}
               </Link>
             </li>
             <li>
-              <Link to="/contact" className={`text-2xl`} onClick={() => setIsMenuOpen(false)}>
+              <Link to="/contact" className={`text-2xl hover:text-teal-500`} onClick={() => setIsMenuOpen(false)}>
                 {t('header.contact')}
               </Link>
             </li>
