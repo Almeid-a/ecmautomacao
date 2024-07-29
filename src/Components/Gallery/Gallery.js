@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 import { NextArrow, PrevArrow } from './Arrow/Arrow';
+import { motion } from 'framer-motion';
 
 import ShowRoom1 from '../../img/ShowRoom/ShowRoom1.webp';
 import ShowRoom2 from '../../img/ShowRoom/ShowRoom2.webp';
@@ -100,22 +101,33 @@ const PhotoGallerySlider = ({ darkMode }) => {
 
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>
-      <div className="max-w-7xl text-center w-full md:px-2 mt-5 md:mb-4 xl:mt-7">
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-7xl text-center w-full md:px-2 mt-5 md:mb-4 xl:mt-7"
+      >
         <h1 className="text-4xl xl:text-5xl font-bold xl:mb-2">{t('gallery.title')}</h1>
         <p className="text-lg md:text-xl mb-4 mt-5 md:mb-2 xl:mt-10 px-3 md:max-w-7xl">
           {t('gallery.description')}
         </p>
-      </div>
+      </motion.div>
       <div className="w-full max-w-6xl mx-auto px-8 md:px-12 mt-5 xl:mt-10 xl:px-4 xl:mb-6">
         <Slider {...settings} className={darkMode ? 'slick-dots-dark' : ''}>
           {photos.map((photo, index) => (
-            <div key={index} className="md:p-4">
+            <motion.div
+              key={index}
+              className="md:p-4"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <div className={`bg-transparent shadow-md rounded-lg p-4 mb-4 ${darkMode ? 'border border-gray-400 text-gray-200' : 'border border-teal-500 text-black'}`}>
                 <div className="relative w-full h-64 xl:h-80">
                   <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover rounded-lg" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </div>
