@@ -61,6 +61,7 @@ const resources = {
         formMessage: "Message",
         formSend: "Send",
         contactus: "Contact Us",
+        emailtitle: "Our Email",
         localizationtitle: "Our Location",
       },
       gallery: {
@@ -127,6 +128,7 @@ const resources = {
         formMessage: "Mensagem",
         formSend: "Enviar",
         contactus: "Contate-nos",
+        emailtitle: "Nosso Email",
         localizationtitle: "Nossa Localização",
       },
       gallery: {
@@ -193,6 +195,7 @@ const resources = {
         formMessage: "Mensaje",
         formSend: "Enviar",
         contactus: "Contáctenos",
+        emailtitle: "Nuestro Correo Electrónico",
         localizationtitle: "Nuestra Ubicación",
       },
       gallery: {

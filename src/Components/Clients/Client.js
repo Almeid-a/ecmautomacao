@@ -66,7 +66,7 @@ const Clients = ({ darkMode }) => {
 
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} min-h-screen flex flex-col items-center justify-center transition-all duration-500 ease-in md:overflow-hidden`}>
-      <div className="mt-5 text-center w-full px-4 md:mb-20">
+      <div className="mt-5 text-center w-full px-4 md:mb-32">
         <div className="relative w-full max-w-3xl lg:max-w-5xl mx-auto">
           <div className="block md:hidden">
             {clients.map((client) => (

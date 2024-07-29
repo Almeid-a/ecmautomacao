@@ -31,12 +31,12 @@ const About = ({ darkMode }) => {
   }, []);
 
   return (
-    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} flex flex-col items-center justify-center min-h-screen`}>
+    <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} flex flex-col items-center min-h-screen`}>
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mt-5 px-4 w-full max-w-7xl mb-5 xl:mb-14"
+        className="text-center mt-7 px-4 w-full max-w-7xl mb-5 xl:mb-14"
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-9">{t('about.abouttitle')}</h1>
         <p className="text-lg md:text-xl">{t('about.aboutdescription')}</p>

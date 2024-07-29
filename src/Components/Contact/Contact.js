@@ -212,7 +212,7 @@ const Contact = ({ darkMode }) => {
             </div>
           </form>
         </div>
-        <div className="md:w-2/3 bg-gray-100 p-8">
+        <div className="md:w-2/3 bg-gray-100 p-8 rounded-r-lg">
           <div className="mb-4">
             <FaMapMarkerAlt
               className={`inline-block mr-2 ${
@@ -230,7 +230,7 @@ const Contact = ({ darkMode }) => {
                 darkMode ? 'text-teal-600' : 'text-teal-500'
               }`}
             />
-            <span>{t('contact.phonetitle')}</span>
+            <span>{t('contact.contactus')}</span>
             <p className="mt-2 text-gray-600">+55 42 3223-2022</p>
           </div>
           <div className="mb-4">
