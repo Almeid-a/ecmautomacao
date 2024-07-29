@@ -47,7 +47,6 @@ const Footer = ({ darkMode }) => {
           </li>
         </ul>
 
-        {/* Direitos Autorais */}
         <div className="text-center text-sm">
           <p>&copy; {new Date().getFullYear()} ECM Automação Industrial. {t('footer.rightsReserved')}</p>
         </div>
