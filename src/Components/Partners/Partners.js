@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { NextArrow, PrevArrow } from './Arrow/Arrow';
@@ -11,29 +11,6 @@ import UniversalRobotsLogoDark from '../../img/Partners/UniversalRobotsLogoDark.
 
 const Partners = ({ darkMode }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (mediaQuery.matches) {
-      document.body.classList.add('no-scroll');
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
 
   const partners = [
     { id: 1, name: 'Lenze', logo: LenzeLogo, url: "https://www.lenze.com/en-br", description: t('partners.lenzeDescription') },

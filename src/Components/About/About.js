@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Vision from '../../img/Vision.png';
 import Mission from '../../img/Mission.png';
@@ -6,29 +6,6 @@ import { motion } from 'framer-motion';
 
 const About = ({ darkMode }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1280px)');
-
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (mediaQuery.matches) {
-      document.body.classList.add('no-scroll');
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
 
   return (
     <div className={`${darkMode ? 'bg-gradient-to-r from-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-100 to-teal-100 text-black'} flex flex-col items-center min-h-screen`}>

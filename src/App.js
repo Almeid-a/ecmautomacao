@@ -3,6 +3,7 @@ import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer'
 import Home from './Components/Home';
 import About from './Components/About/About';
 import Partners from './Components/Partners/Partners';
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/gallery" element={<Gallery darkMode={darkMode} />} />
           <Route path="/contact" element={<Contact darkMode={darkMode} />} />
         </Routes>
+        <Footer darkMode={darkMode} />
       </div>
     </Router>
   );

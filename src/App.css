@@ -12,11 +12,21 @@
 #dark {
     background-color: #46045e;
 }
-
-.no-scroll {
-    overflow: hidden;
-  }
-  
+ 
 .slick-dots-dark .slick-dots li button:before {
 color: white;
+}
+
+html, body {
+    height: 100vh;
+}
+  
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
 }

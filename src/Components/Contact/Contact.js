@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
@@ -23,29 +23,6 @@ const Contact = ({ darkMode }) => {
     phone: false,
     message: false,
   });
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1280px)');
-
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (mediaQuery.matches) {
-      document.body.classList.add('no-scroll');
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

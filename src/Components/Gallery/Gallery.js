@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
 import { NextArrow, PrevArrow } from './Arrow/Arrow';
@@ -26,29 +26,6 @@ import ShowRoom19 from '../../img/ShowRoom/ShowRoom19.webp';
 
 const PhotoGallerySlider = ({ darkMode }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1280px)');
-
-    const handleMediaQueryChange = (e) => {
-      if (e.matches) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (mediaQuery.matches) {
-      document.body.classList.add('no-scroll');
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-      mediaQuery.removeListener(handleMediaQueryChange);
-    };
-  }, []);
 
   const photos = [
     { src: ShowRoom1, alt: t('gallery.image1Description') },

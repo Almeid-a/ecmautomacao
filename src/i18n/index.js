@@ -68,6 +68,16 @@ const resources = {
         title: "Services Provided",
         description: "This section shows some images of the services provided by ECM Industrial Automation. Our work includes the installation of electrical panels, automation of industrial processes, and much more. Each image represents our commitment to quality and customer satisfaction.",
       },
+      footer: {
+        description: "Providing complete industrial automation solutions.",
+        home: "Home",
+        about: "About",
+        clients: "Clients",
+        partners: "Partners",
+        gallery: "Gallery",
+        contact: "Contact",
+        rightsReserved: "All rights reserved."
+      }
     }
   },
   pt: {
@@ -135,6 +145,16 @@ const resources = {
         title: "Serviços Realizados",
         description: "Esta seção mostra algumas imagens dos serviços realizados pela ECM Automação Industrial. Nosso trabalho inclui a instalação de painéis elétricos, automação de processos industriais e muito mais. Cada imagem representa nosso compromisso com a qualidade e a satisfação do cliente.",
       },
+      footer: {
+        description: "Oferecendo soluções completas de automação industrial.",
+        home: "Início",
+        about: "Sobre",
+        clients: "Clientes",
+        partners: "Parceiros",
+        gallery: "Galeria",
+        contact: "Contato",
+        rightsReserved: "Todos os direitos reservados."
+      }
     }
   },
   es: {
@@ -202,6 +222,16 @@ const resources = {
         title: "Servicios Prestados",
         description: "Esta sección muestra algunas imágenes de los servicios prestados por ECM Automatización Industrial. Nuestro trabajo incluye la instalación de paneles eléctricos, la automatización de procesos industriales y mucho más. Cada imagen representa nuestro compromiso con la calidad y la satisfacción del cliente.",
       },
+      footer: {
+        description: "Ofreciendo soluciones completas de automatización industrial.",
+        home: "Inicio",
+        about: "Acerca de",
+        clients: "Clientes",
+        partners: "Socios",
+        gallery: "Galería",
+        contact: "Contacto",
+        rightsReserved: "Todos los derechos reservados."
+      }
     }
   },
 };
