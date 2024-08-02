@@ -28,7 +28,6 @@ const Contact = ({ darkMode }) => {
     const { name, value } = e.target;
 
     if (name === 'name') {
-      // Permitir apenas letras e espaços
       const regex = /^[a-zA-Z\s]*$/;
       if (!regex.test(value)) {
         return;
