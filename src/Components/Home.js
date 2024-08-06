@@ -90,7 +90,7 @@ const Home = ({ darkMode }) => {
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.segmentsTitle')}</h2>
           <div className="flex flex-wrap justify-center">
             {segments.map((segment, index) => (
-              <motion.div key={index} initial={{ x: -500 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60`}>
+              <motion.div key={index} initial={{ x: -500 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60 flex flex-col items-center justify-center`}>
                 <div className="text-5xl mb-2">{segment.icon}</div>
                 <div>{segment.text}</div>
               </motion.div>
@@ -102,7 +102,7 @@ const Home = ({ darkMode }) => {
           <h2 className="text-3xl font-bold mb-4 text-center">{t('main.servicesTitle')}</h2>
           <div className="flex flex-wrap justify-center">
             {services.map((service, index) => (
-              <motion.div key={index} initial={{ x: -500 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60`}>
+              <motion.div key={index} initial={{ x: -500 }} animate={{ x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className={`m-4 p-4 border ${darkMode ? 'border-gray-400' : 'border-teal-500'} rounded text-center w-60 flex flex-col items-center justify-center`}>
                 <div>{service.text}</div>
               </motion.div>
             ))}
