@@ -89,10 +89,10 @@ const Contact = ({ darkMode }) => {
 
     try {
       const response = await emailjs.send(
-        'service_xx96w7v',
-        'template_aokg7dw',
+        'service_62wr722',
+        'template_aob37aa',
         formData,
-        'MVARxd9rxtBSLFxUF'
+        'dU_NwQcuknXOJmUtl'
       );
       setFormData({
         name: '',
