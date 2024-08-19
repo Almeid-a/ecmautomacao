@@ -76,7 +76,8 @@ const resources = {
         partners: "Partners",
         gallery: "Gallery",
         contact: "Contact",
-        rightsReserved: "All rights reserved."
+        rightsReserved: "All rights reserved.",
+        develop: "Developed by"
       }
     }
   },
@@ -153,7 +154,8 @@ const resources = {
         partners: "Parceiros",
         gallery: "Galeria",
         contact: "Contato",
-        rightsReserved: "Todos os direitos reservados."
+        rightsReserved: "Todos os direitos reservados.",
+        develop: "Desenvolvido por"
       }
     }
   },
@@ -230,7 +232,8 @@ const resources = {
         partners: "Socios",
         gallery: "Galería",
         contact: "Contacto",
-        rightsReserved: "Todos los derechos reservados."
+        rightsReserved: "Todos los derechos reservados.",
+        develop: "Desarrollado por"
       }
     }
   },
@@ -242,7 +245,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    lng: 'pt-br', // Define 'pt-br' como o idioma principal
+    lng: 'pt-br', 
     detection: {
       order: ['queryString', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
       cache: ['cookie']
