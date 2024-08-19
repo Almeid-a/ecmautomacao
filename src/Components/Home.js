@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { useTranslation } from 'react-i18next';
@@ -54,11 +54,16 @@ const Home = ({ darkMode }) => {
   };
 
   const images = [imageslider1, imageslider2, imageslider3];
-  const galleryImages = [ShowRoom1, ShowRoom2, ShowRoom3, ShowRoom4, ShowRoom5, ShowRoom6, ShowRoom7, ShowRoom8, ShowRoom9, ShowRoom10, ShowRoom11, ShowRoom12, ShowRoom13, ShowRoom14, ShowRoom15, ShowRoom16, ShowRoom17, ShowRoom18, ShowRoom19];
+
+  const galleryImages = useMemo(() => [
+    ShowRoom1, ShowRoom2, ShowRoom3, ShowRoom4, ShowRoom5, ShowRoom6, ShowRoom7,
+    ShowRoom8, ShowRoom9, ShowRoom10, ShowRoom11, ShowRoom12, ShowRoom13,
+    ShowRoom14, ShowRoom15, ShowRoom16, ShowRoom17, ShowRoom18, ShowRoom19
+  ], []);
 
   useEffect(() => {
     preloadImages(galleryImages);
-  }, []);
+  }, [galleryImages]);
 
   return (
     <div className={`bg-gradient-to-r ${darkMode ? 'from-gray-800 to-black text-gray-200' : 'from-gray-100 to-teal-100 text-gray-800'} min-h-screen flex flex-col items-center transition-all duration-500 ease-in`}>

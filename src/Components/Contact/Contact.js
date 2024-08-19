@@ -88,7 +88,7 @@ const Contact = ({ darkMode }) => {
     }
 
     try {
-      const response = await emailjs.send(
+      await emailjs.send(
         'service_62wr722',
         'template_aob37aa',
         formData,
@@ -103,12 +103,10 @@ const Contact = ({ darkMode }) => {
       toast.success(t('Email enviado com sucesso!'));
     } catch (error) {
       toast.error(
-        t(
-          'Erro ao enviar o email. Por favor, tente novamente mais tarde.'
-        )
+        t('Erro ao enviar o email. Por favor, tente novamente mais tarde.')
       );
     }
-  };
+  }
 
   const googleMapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.4959593157327!2d-50.1524864490183!3d-25.08696264411426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ef58869d6fcd91%3A0x1c03b7247e6c1e75!2sR.%20Alfazema%2C%20114%20-%20Contorno%2C%20Ponta%20Grossa%20-%20PR%2C%2084060-040%2C%20Brazil!5e0!3m2!1sen!2sus!4v1683210842651!5m2!1sen!2sus`;
 
